@@ -47,26 +47,19 @@ export default function App() {
     const data = Object.fromEntries(new FormData(e.currentTarget));
     console.log(data);
 
-    // Custom validation checks
     const newErrors = {};
 
-    // Password validation
     const passwordError = getPasswordError(data.password, data.rePassword);
     if (passwordError) {
       newErrors.password = passwordError;
     }
 
-    // Username validation
     if (data.name === "admin") {
       newErrors.name = "Nice try! Choose a different username";
     }
 
-    // Terms validation - check if the checkbox is checked
-
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
-
-      // Prevent form submission if there are errors
     }
 
     const dataSignUp = {
@@ -81,10 +74,10 @@ export default function App() {
     setIsLoading(false);
     if (respons.status.code == 201) {
       console.log("tes");
-      showAlert(); // Tampilkan alert sukses
+      showAlert();
     }
     console.log(respons);
-    // Clear errors and submit
+
     setErrors({});
   };
 
@@ -157,7 +150,7 @@ export default function App() {
               value={password}
               onValueChange={(value) => {
                 setPassword(value);
-                setPasswordTouched(true); // Tandai password sudah disentuh
+                setPasswordTouched(true);
               }}
             />
             <Input
@@ -176,7 +169,7 @@ export default function App() {
               value={rePassword}
               onValueChange={(value) => {
                 setRePassword(value);
-                setRePasswordTouched(true); // Tandai rePassword sudah disentuh
+                setRePasswordTouched(true);
               }}
             />
             <Checkbox

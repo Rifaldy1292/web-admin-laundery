@@ -186,7 +186,7 @@ export default function ManagementProduct() {
       if (respons.data && respons.data.length > 0) {
         setUsers(respons.data);
       } else {
-        setUsers([]); // Atur data kosong jika tidak ada produk
+        setUsers([]);
       }
       console.log(respons.data);
       console.log(users);
@@ -317,7 +317,6 @@ export default function ManagementProduct() {
           buttonClose={() => setShowFromEditProduct(false)}
           fetchAgain={fetchData}
           addText={"Edit"}
-          // confirmEdit={() => handleEditConfirmation(editProduct)}
           id={editProduct}
         />
       )}

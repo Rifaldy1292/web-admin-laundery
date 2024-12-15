@@ -209,7 +209,7 @@ export default function Transaction() {
       const respons = await getDataTransaction(token);
       if (respons.data && respons.data.length > 0) {
         const result = {
-          status: respons.status, // Mengambil status dari respons
+          status: respons.status,
           data: respons.data.map((item) => ({
             idCustomer: item.customer.id,
             id: uuidv4(),
@@ -218,23 +218,22 @@ export default function Transaction() {
             address: item.customer.address,
             createdAt: item.customer.createdAt,
             updatedAt: item.customer.updatedAt,
-            idTransaksi: item.id, // Mengambil id transaksi dari root objek
-            idAdmin: item.user.id, // Mengambil id admin dari user
-            nameAdmin: item.user.name, // Mengambil nama admin dari user
-            idBill: item.billDetails[0].billId, // Mengambil id bill dari billDetails
-            qtyBill: item.billDetails[0].qty, // Mengambil qty dari billDetails
+            idTransaksi: item.id,
+            idAdmin: item.user.id,
+            nameAdmin: item.user.name,
+            idBill: item.billDetails[0].billId,
+            qtyBill: item.billDetails[0].qty,
             billPrice: item.billDetails[0].price,
-            billName: item.billDetails[0].product.name, // Mengambil price dari billDetails
+            billName: item.billDetails[0].product.name,
             totalPrice: item.billDetails[0].price * item.billDetails[0].qty,
           })),
-          paging: respons.paging, // Menyimpan data paging seperti yang ada pada respons
+          paging: respons.paging,
         };
         console.log("inni bro", result.data);
         setUsers(result.data);
-        setIsLoading(false); // Menyimpan data yang sudah dimodifikasi ke dalam state
+        setIsLoading(false);
       } else {
         setUsers([]);
-        // Atur data kosong jika tidak ada produk
       }
       console.log("ini data asli", respons.data);
       console.log(users);
@@ -259,7 +258,7 @@ export default function Transaction() {
 
     switch (columnKey) {
       case "name":
-        console.log("Customer Data:"); // Menampilkan seluruh objek user untuk memeriksa isinya
+        console.log("Customer Data:");
 
         return (
           <User

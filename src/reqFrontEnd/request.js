@@ -1,4 +1,3 @@
-// api.js
 import axios from "axios";
 
 const apiClient = axios.create({
@@ -55,7 +54,7 @@ export const addNewProduct = async (bearerToken, data) => {
 export const deleteProduct = async (bearerToken, id) => {
   try {
     const token = bearerToken;
-    // Menggunakan id pada URL, bukan pada body
+
     const response = await apiClient.delete(`/v1/products/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -69,7 +68,7 @@ export const deleteProduct = async (bearerToken, id) => {
 export const editProduct = async (bearerToken, data) => {
   try {
     const token = bearerToken;
-    // Menggunakan id pada URL, bukan pada body
+
     const response = await apiClient.put(`/v1/products`, data, {
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -109,7 +108,7 @@ export const addNewPelanggan = async (bearerToken, data) => {
 export const deletePelanggan = async (bearerToken, id) => {
   try {
     const token = bearerToken;
-    // Menggunakan id pada URL, bukan pada body
+
     const response = await apiClient.delete(`/v1/customers/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -124,7 +123,7 @@ export const deletePelanggan = async (bearerToken, id) => {
 export const editPelanggan = async (bearerToken, data) => {
   try {
     const token = bearerToken;
-    // Menggunakan id pada URL, bukan pada body
+
     const response = await apiClient.put(`/v1/customers`, data, {
       headers: { Authorization: `Bearer ${token}` },
     });

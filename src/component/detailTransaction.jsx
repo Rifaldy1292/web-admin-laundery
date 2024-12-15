@@ -3,8 +3,6 @@ import { Card } from "@nextui-org/react";
 const DetailTransaction = ({ id, data, buttonClose }) => {
   const billData = id === data?.id ? data : null;
 
-  // Jika data tidak ditemukan, tampilkan pesan error
-
   const { customer, user, billDetails } = billData;
 
   return (

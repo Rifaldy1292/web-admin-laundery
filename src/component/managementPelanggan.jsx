@@ -325,7 +325,6 @@ export default function ManagementPelanggan() {
           buttonClose={() => setShowFromEditProduct(false)}
           fetchAgain={fetchData}
           addText={"Edit"}
-          // confirmEdit={() => handleEditConfirmation(editProduct)}
           id={editProduct}
         />
       )}

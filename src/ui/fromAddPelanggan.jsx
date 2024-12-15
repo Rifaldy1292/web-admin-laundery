@@ -31,14 +31,13 @@ export default function FromAddPelanggan({ buttonClose, fetchAgain, addText }) {
 
     if (respons.status.code === 201) {
       console.log("Produk berhasil ditambahkan!");
-      // Tambahkan logika lain untuk mengubah state atau UI
+
       fetchAgain();
       buttonClose();
       setIsLoading(false);
     } else {
       console.error("Gagal menambahkan produk:", respons.status.description);
       setIsLoading(false);
-      // Tambahkan logika untuk penanganan error
     }
   };
   return (

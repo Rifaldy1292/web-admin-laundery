@@ -1,4 +1,3 @@
-// DropdownComponent.jsx
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { div } from "framer-motion/client";
@@ -49,7 +48,7 @@ const FormAddTransaksi = ({ buttonClose, fetchAgain }) => {
         setPackages(responsDataPackage.data);
         setCustomers(responsDataCustomer.data);
       } else {
-        setCustomers([]); // Atur data kosong jika tidak ada produk
+        setCustomers([]);
       }
     } catch (error) {
       console.error("There was an error!", error);
@@ -106,7 +105,7 @@ const FormAddTransaksi = ({ buttonClose, fetchAgain }) => {
     const respons = await addNewTransaction(token, dataForBe);
     if (respons.status.code === 201) {
       console.log("transaksi berhasil ditambahkan!");
-      // Tambahkan logika lain untuk mengubah state atau UI
+
       fetchAgain();
       buttonClose();
       setIsLoading(false);

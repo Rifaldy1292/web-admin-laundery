@@ -14,7 +14,6 @@ import {
 import logo from "../assets/laundry-machine.png";
 import { useEffect } from "react";
 export default function MyNavbar({ showMenu }) {
-  // State untuk melacak item aktif
   const [activeItem, setActiveItem] = useState("manajemen-pelanggan");
   const handleLogout = () => {
     localStorage.removeItem("apiToken");
